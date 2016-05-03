@@ -1,0 +1,23 @@
+{
+  "name": "koala",
+  "version": "1.0.0",
+  "description": "NodeJS application based on koa@2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dots-the-game/koala.git"
+  },
+  "keywords": [
+    "nodejs",
+    "koa"
+  ],
+  "author": "Aleksander Kazantsev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dots-the-game/koala/issues"
+  },
+  "homepage": "https://github.com/dots-the-game/koala#readme"
+}
