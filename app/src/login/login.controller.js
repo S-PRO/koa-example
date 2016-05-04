@@ -10,9 +10,8 @@ import TokenService from './../../utils/token'
 
 export default class LoginController {
 
-    static async login(ctx) {
+    static async login(body) {
         let error = Boom.badData('Email or password is not correct');
-        let body = ctx.request.body;
 
         /**
          * Find account.
@@ -30,6 +29,7 @@ export default class LoginController {
          * Generate token.
          */
         let token = TokenService.generate(account._id);
-        ctx.body = {token, profile};
+
+        return Promise.resolve({token, profile});
     }
 }

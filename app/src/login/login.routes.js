@@ -14,7 +14,7 @@ const router = new Router(OPTIONS);
 
 router
     .post('/', async(ctx, next) => {
-        await LoginController.login(ctx);
+        ctx.body = await LoginController.login(ctx.request.body);
         await next();
     });
 
