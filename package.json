@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "pm2-dev run index.js",
-    "test": "mocha app/src/**/*.spec.js --compilers js:babel-core/register --require babel-polyfill --watch"
+    "test": "mocha app/src/**/*.spec.js --compilers js:babel-core/register --require babel-polyfill"
   },
   "repository": {
     "type": "git",

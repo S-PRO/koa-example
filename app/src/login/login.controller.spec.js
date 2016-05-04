@@ -20,7 +20,7 @@ const _profile = {_id: 'some profile id'};
 
 describe('LoginController', function () {
     describe('exist', function () {
-        it('login() method must be exist', function (done) {
+        it('login method must be exist', function (done) {
             expect(LoginController.login).to.exist;
             done();
         });
@@ -40,9 +40,9 @@ describe('LoginController', function () {
             TokenService.generate.restore();
         });
         
-        it('login() must be called', function (done) {
-            let ctx = {request: {body: {email: 'foo@bar.com'}}};
-            LoginController.login(ctx)
+        it('login must be success', function (done) {
+            let params = {email: 'foo@bar.com'};
+            LoginController.login(params)
                 .then(function(result) {
                     expect(result).to.deep.equal({token: _token, profile: _profile});
                     done();
