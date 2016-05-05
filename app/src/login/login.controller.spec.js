@@ -17,6 +17,8 @@ import TokenService from './../../utils/token'
 const expect = chai.expect;
 const _token = 'some token';
 const _profile = {_id: 'some profile id'};
+const _successData = {email: 'foo@bar.com', password: '123123'}
+const _failedData = {email: 'bar@baz.com', password: 'qwerty'}
 
 describe('LoginController', function () {
     describe('exist', function () {
@@ -27,7 +29,10 @@ describe('LoginController', function () {
     });
     describe('methods', function () {
         beforeEach(function (done) {
-            sinon.stub(AccountModel, 'fetch').returns(Promise.resolve({_id: 'account id'}));
+            sinon.stub(AccountModel, 'fetch')
+                .withArgs({email: _successData.email}).returns(Promise.resolve({_id: 'account id'}))
+                .withArgs({email: _failedData.email}).returns(null);
+            
             sinon.stub(ProfileModel, 'fetch').returns(Promise.resolve(_profile));
             sinon.stub(PasswordService, 'compare').returns(true);
             sinon.stub(TokenService, 'generate').returns(_token);
@@ -41,10 +46,17 @@ describe('LoginController', function () {
         });
         
         it('login must be success', function (done) {
-            let params = {email: 'foo@bar.com'};
-            LoginController.login(params)
+            LoginController.login(_successData)
                 .then(function(result) {
                     expect(result).to.deep.equal({token: _token, profile: _profile});
+                    done();
+                });
+        });
+        
+        it('login must be failed', function (done) {
+            LoginController.login(_failedData)
+                .catch(function (error) {
+                    expect(error.isBoom).to.be.ok;
                     done();
                 });
         });

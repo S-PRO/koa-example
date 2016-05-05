@@ -20,7 +20,7 @@ export default class LoginController {
         /**
          * Check if data is correct.
          */
-        if (!account || !PasswordService.compare(body.password, account.password)) throw error;
+        if (!account || !PasswordService.compare(body.password, account.password)) return Promise.reject(error);
         /**
          * Get profile.
          */
@@ -29,7 +29,7 @@ export default class LoginController {
          * Generate token.
          */
         let token = TokenService.generate(account._id);
-
+        
         return Promise.resolve({token, profile});
     }
 }
