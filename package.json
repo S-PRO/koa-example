@@ -37,15 +37,16 @@
   },
   "dependencies": {
     "boom": "^3.1.2",
+    "jsonwebtoken": "^6.2.0",
     "koa": "^2.0.0",
     "koa-bodyparser": "^3.0.0",
     "koa-compose": "^2.4.0",
     "koa-compress": "^2.0.0",
     "koa-convert": "^1.2.0",
     "koa-cors": "0.0.16",
-    "koa-jwt": "^1.2.0",
     "koa-logger": "^2.0.0",
     "koa-router": "^7.0.1",
+    "lodash": "^4.11.2",
     "mongoose": "^4.4.14"
   }
 }

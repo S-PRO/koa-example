@@ -10,10 +10,6 @@ export const SERVER = {
     port: 3000
 };
 
-/**
- * 
- * @type {Array}
- */
 export const MODULES = [
     'login',
     'account',

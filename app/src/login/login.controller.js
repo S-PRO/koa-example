@@ -29,7 +29,7 @@ export default class LoginController {
          * Generate token.
          */
         let token = TokenService.generate(account._id);
-        
+
         return Promise.resolve({token, profile});
     }
 }

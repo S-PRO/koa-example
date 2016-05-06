@@ -6,11 +6,11 @@ import AccountSchema from './account.schema'
 import PasswordService from './../../utils/password'
 
 export default class AccountModel {
-    
+
     static async fetch(params) {
         return await AccountSchema.findOne(params).exec();
     }
-    
+
     static async register(user) {
         let account = new AccountSchema({
             email: user.email,

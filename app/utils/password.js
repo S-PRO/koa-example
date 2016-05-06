@@ -15,7 +15,7 @@ export default class PasswordService {
             .update(str)
             .digest('hex')
     }
-    
+
     static compare(str, hash) {
         return this.crypt(str) === hash;
     }
