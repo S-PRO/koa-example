@@ -3,15 +3,9 @@
  */
 
 export const CORS = {
-    origin: true
+  origin: true,
 };
 
 export const SERVER = {
-    port: 3000
+  port: 3000,
 };
-
-export const MODULES = [
-    'login',
-    'account',
-    'profile'
-];

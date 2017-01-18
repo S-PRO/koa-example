@@ -1,7 +1,0 @@
-{
-  "presets": ["es2015-node5", "stage-1"],
-  "plugins": [
-    "transform-async-to-generator",
-    "transform-decorators-legacy"
-  ]
-}
