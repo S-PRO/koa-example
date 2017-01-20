@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "dev": "DEBUG=koa-example:* nodemon -w app --exec \"babel-node app --presets es2015,stage-0 --plugins transform-decorators-legacy\"",
-    "test": "mocha app/src/**/*.spec.js --compilers js:babel-core/register --require babel-polyfill",
-    "test:watch": "mocha app/src/**/*.spec.js --compilers js:babel-core/register --require babel-polyfill --watch",
     "lint:js": "eslint app/**/*.js",
     "precommit": "npm run lint:js",
     "prepush": "npm run lint:js"
