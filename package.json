@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "DEBUG=koa-example:* nodemon -w app --exec \"babel-node app --presets es2015,stage-0 --plugins transform-decorators-legacy\"",
     "test": "mocha app/src/**/*.spec.js --compilers js:babel-core/register --require babel-polyfill",
-    "test:watch": "mocha app/src/**/*.spec.js --compilers js:babel-core/register --require babel-polyfill --watch"
+    "test:watch": "mocha app/src/**/*.spec.js --compilers js:babel-core/register --require babel-polyfill --watch",
+    "lint:js": "eslint app/**/*.js",
+    "precommit": "npm run lint:js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +35,7 @@
     "eslint": "^3.13.1",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
+    "husky": "^0.12.0",
     "nodemon": "^1.11.0",
     "sinon": "^1.17.4"
   },

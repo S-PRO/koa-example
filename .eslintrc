@@ -12,5 +12,6 @@
       "named": "ignore",
       "asyncArrow": "ignore"
     }],
+    "object-shorthand": [2, "consistent"],
   }
 }
