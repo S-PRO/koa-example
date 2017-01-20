@@ -9,6 +9,7 @@ const OPTIONS = {
 const router = new Router(OPTIONS);
 
 router
-  .post('/', UserController.create);
+  .post('/', UserController.create)
+  .post('/:id', UserController.create);
 
 export default router.routes();

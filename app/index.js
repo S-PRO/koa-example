@@ -37,6 +37,6 @@ fs.readdirSync(`${__dirname}/src`)
       app.use(require(`${__dirname}/src/${mod}/router.js`).default) // eslint-disable-line
       debug(`loaded: '${mod}' module.`);
     } catch (e) {
-      error(`Error, while loading ${mod}`);
+      error(`Error, while loading ${mod}`, e);
     }
   });
